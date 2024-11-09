@@ -1,10 +1,10 @@
 require("dotenv").config();
 const axios = require("axios");
 
-const accountUtils = {
+const trainingUtils = {
 
 
  
 };
 
-module.exports = accountUtils;
+module.exports = trainingUtils;

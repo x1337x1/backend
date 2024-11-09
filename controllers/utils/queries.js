@@ -1,10 +1,10 @@
 require("dotenv").config();
 const axios = require("axios");
 
-const accountUtils = {
+const queriesUtils = {
 
 
  
 };
 
-module.exports = accountUtils;
+module.exports = queriesUtils;
