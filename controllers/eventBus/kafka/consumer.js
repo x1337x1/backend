@@ -12,7 +12,7 @@ async function initConsumer() {
     await consumer.subscribe({ topics: topics });
     await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
-        const msg = JSON.parse(message.value.toString());
+        const msg = JSON.parse(message?.value?.toString());
         console.log(`Received message on topic ${topic}:`, msg);
         // Process the message as needed
       },

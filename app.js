@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 1337;
 const createError = require("http-errors");
 const {initConsumer} = require("./controllers/eventBus/kafka/consumer")
 const {initProducer}  = require("./controllers/eventBus/kafka/producer")
-
+const WebSocketServer = require('./controllers/eventBus/socket/index')
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +16,7 @@ app.use(cookieParser());
 app.use("/api", require("./routes"));
 
 
+global.socket = new WebSocketServer(`${process.env.WEBSOCKET_URL || "ws://localhost:8000"}?origin=was`);
 
 
 app.use(function (req, res, next) {

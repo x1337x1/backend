@@ -17,8 +17,8 @@ const trainingController = {
 
 	async inputTraining(req, res) {
 		try {
-			const training_event_input = 'nervana_training_input'
-			await sendKafkaMessage(topic, training_event_input, req.body)
+			const koala_event_input = 'koala_training_input'
+			await sendKafkaMessage(topic, koala_event_input, req.body)
 			const data = {
 				message: 'Training input successfully sent',
 				data: req.body,
@@ -29,6 +29,19 @@ const trainingController = {
 		}
 	},
 
+	async urlTraining(req, res) {
+		try {
+			const koala_event_url = 'koala_training_url'
+			await sendKafkaMessage(topic, koala_event_url, req.body)
+			const data = {
+				message: 'Training input successfully sent',
+				data: req.body,
+			}
+			res.status(200).send(data);
+		} catch (e) {
+			console.error('@@ urlTraining @@ error:', e)
+		}
+	},
 
 };
 

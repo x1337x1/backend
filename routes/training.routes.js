@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const router = express.Router();
-const { FileTraining, inputTraining } = require('../controllers/training-controller');
+const { FileTraining, inputTraining, urlTraining } = require('../controllers/training-controller');
 
 
 
@@ -15,4 +15,8 @@ router.post(
     inputTraining
 )
 
+router.post(
+    "/url",
+    urlTraining 
+)
 module.exports = router;

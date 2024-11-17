@@ -6,7 +6,7 @@ const { query } = require('../controllers/queries-controller');
 
 
 router.post(
-    "/training/input",
+    "/ask",
     query
 )
 
