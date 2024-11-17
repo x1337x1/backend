@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use("/api", require("./routes"));
 
 
-global.socket = new WebSocketServer(`${process.env.WEBSOCKET_URL || "ws://localhost:8000"}?origin=was`);
+// global.socket = new WebSocketServer(`${process.env.WEBSOCKET_URL || "ws://localhost:8000"}?origin=was`);
 
 
 app.use(function (req, res, next) {
